@@ -1,4 +1,4 @@
-const { HOST, PORT } = process.env;
+const { HOST, PORT, BASE_PATH } = process.env;
 
 const options = {
 	swaggerDefinition: {
@@ -8,7 +8,7 @@ const options = {
 			version: '1.0.0',
 		},
 		host: `${HOST}:${PORT}`,
-		basePath: '/v1',
+		basePath: BASE_PATH,
 		produces: ['application/json'],
 		accepts: ['application/x-www-form-urlencoded', 'application/json'],
 		schemes: ['http', 'https'],

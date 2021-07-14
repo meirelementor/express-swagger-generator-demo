@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 8080;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/v1', routes);
+app.use(process.env.BASE_PATH, routes);
 
 app.use((result, req, res, next) => {
 	if (result instanceof Error) {

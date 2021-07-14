@@ -17,4 +17,5 @@ The `express-swagger-generator` creates for you the `swagger` documentation. You
 ```bash
 HOST=localhost
 PORT=8080
+BASE_PATH=/v1
 ```
