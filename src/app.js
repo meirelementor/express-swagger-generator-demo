@@ -1,12 +1,13 @@
 require('dotenv').config();
 const express = require('express');
-const expressSwaggerGenerator = require('express-swagger-generator');
+const expressSwagger = require('express-swagger-generator');
 const routes = require('./routes');
 const swaggerOptions = require('./swagger-options');
 
-const app = express();
-const expressSwagger = expressSwaggerGenerator(app);
 const PORT = process.env.PORT || 8080;
+
+const app = express();
+expressSwagger(app)(swaggerOptions);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -24,7 +25,5 @@ app.use((result, req, res, next) => {
 	}
 	res.send(result);
 });
-
-expressSwagger(swaggerOptions);
 
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));

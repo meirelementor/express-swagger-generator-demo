@@ -1,4 +1,4 @@
-const { HOST, PORT, BASE_PATH } = process.env;
+const { HOST, PORT, BASE_PATH, SWAGGER_URL } = process.env;
 
 const options = {
 	swaggerDefinition: {
@@ -23,6 +23,10 @@ const options = {
 	},
 	basedir: __dirname, //app absolute path
 	files: ['./routes/*.js'], //Path to the API handle folder
+	route: {
+		url: SWAGGER_URL,
+		docs: `${SWAGGER_URL}.json`,
+	},
 };
 
 module.exports = options;
