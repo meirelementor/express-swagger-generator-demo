@@ -15,7 +15,8 @@ The `express-swagger-generator` creates for you the `swagger` documentation. You
 
 ### Environment Variables
 ```bash
-HOST=localhost
 PORT=8080
+HOST=localhost
 BASE_PATH=/v1
+SWAGGER_URL=/swagger/api-docs
 ```
