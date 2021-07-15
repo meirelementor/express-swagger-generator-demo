@@ -32,6 +32,15 @@ router.get('/hello', exampleController.getHello);
 router.get('/with-param/:id', exampleController.getParams);
 
 /**
+ * This route returns the passed param
+ * @route GET /with-param-enum/{id}
+ * @param {enum} id.path.required - available id's - eg: 1,2
+ * @group Demo - swagger generator demo
+ * @returns {object} 200 - {id: param}
+ */
+router.get('/with-param-enum/:id', exampleController.getParams);
+
+/**
  * This route returns passed query
  * @route GET /with-query
  * @param {string} type.query.required
